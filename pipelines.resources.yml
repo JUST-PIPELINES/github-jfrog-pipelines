@@ -1,0 +1,6 @@
+resources:
+  - name: myAppRepo
+    type: GitRepo
+    configuration:
+      gitProvider: MyGitHub                                    # Change to your integration
+      path: devopsguys3/github-jfrog-pipelines                 # Change to your repo
