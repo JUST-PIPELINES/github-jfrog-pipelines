@@ -8,9 +8,9 @@ resources:
         include: master
 
   - name: dockerhub
-     type: Image
-     configuration:
+    type: Image
+    configuration:
        registry: dockerhub
        imageName: chakilams3/for-jfrog-pipelines
-       imageTag:  latest
-       autoPull:  true
+       imageTag: latest
+       autoPull: true
