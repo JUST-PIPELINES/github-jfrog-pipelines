@@ -10,9 +10,9 @@ pipelines:
           dockerImageName: chakilams3/for-jfrog-pipelines  # replace with your image path and name
           dockerImageTag: latest
           inputResources:
-            - name: dockerhub
+            - name: github
           integrations:
-            - name: dockerhub    # replace with your artifactory integration
+            - name: artifactorydockerrepo    # replace with your artifactory integration
 
       - name: docker_push
         type: DockerPush
@@ -20,6 +20,6 @@ pipelines:
           affinityGroup: together
           targetRepository: example-repo-local
           integrations:
-            - name: dockerhub    # replace with your artifactory integration
+            - name: artifactorydockerrepo    # replace with your artifactory integration
           inputSteps:
             - name: docker_build
