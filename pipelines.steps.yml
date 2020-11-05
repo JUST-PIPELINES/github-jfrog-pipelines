@@ -18,8 +18,6 @@ pipelines:
         configuration:
           targetRepository: example-repo-local
           integrations:
-            - name: jfrog_artifactory_int    # replace with your artifactory integration
+            - name: dockerhub    # replace with your artifactory integration
           inputSteps:
             - name: docker_build
-          outputResources:
-            - name: dbp_image
