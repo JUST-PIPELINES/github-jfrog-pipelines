@@ -7,7 +7,7 @@ pipelines:
           affinityGroup: together
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: chakilams3/for-jfrog-pipelines  # replace with your image path and name
+          dockerImageName: cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage  # replace with your image path and name
           dockerImageTag: latest
           inputResources:
             - name: github
