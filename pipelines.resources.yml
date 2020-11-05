@@ -6,12 +6,11 @@ resources:
       path: devopsguys3/github-jfrog-pipelines    # replace with your repository name
       branches:
         include: master
- 
-  - name: dbp_image
-    type: Image
-    configuration:
-      registry: jfrog_artifactory_int      # replace with your Artifactory integration
-      sourceRepository: example-repo-local       # required if registry is Artifactory
-      imageName: myimage/example-repo-local/mydockerbase  # replace with your image path and name
-      imageTag: latest
-      autoPull: true
+
+  - name: dockerhub
+     type: Image
+     configuration:
+       registry: dockerhub
+       imageName: chakilams3/for-jfrog-pipelines
+       imageTag:  latest
+       autoPull:  true
