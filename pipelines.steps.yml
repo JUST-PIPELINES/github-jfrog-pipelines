@@ -28,7 +28,7 @@ pipelines:
         type: Bash
         configuration: 
           affinityGroup: together
-          integrations:
+          inputResources: 
             - name: sshkey
           inputSteps: 
             - name: docker_push
@@ -37,4 +37,4 @@ pipelines:
             - docker login cloudnativesol.jfrog.io -u cloudnativesol@gmail.com -p Santhu@439
             - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
           onExecute: 
-             - ssh root@15.206.19.95 "docker image pull cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:latest && docker stop webapp && docker rm webapp && docker rmi cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:current && docker image tag cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:latest cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:current && docker run -d --name webapp -p 8080:80 cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:current"
+             - ssh -i ~/.ssh/sshkey root@15.206.19.95 "docker image pull cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:latest && docker stop webapp && docker rm webapp && docker rmi cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:current && docker image tag cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:latest cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:current && docker run -d --name webapp -p 8080:80 cloudnativesol.jfrog.io/artifactorydockerrepo/myfirstimage:current"
