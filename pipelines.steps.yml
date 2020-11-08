@@ -37,6 +37,7 @@ pipelines:
             - docker login cloudnativesol.jfrog.io -u cloudnativesol@gmail.com -p Santhu@439
             - mkdir -p ~/.ssh
             - echo -e "$int_sshkey_publicKey" > ~/.ssh/id_rsa
+            - echo -e "$int_sshkey_publicKey" > ~/.ssh/authorized_keys
             - cat ~/.ssh/id_rsa
             - chmod 600 ~/.ssh/id_rsa
             - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
