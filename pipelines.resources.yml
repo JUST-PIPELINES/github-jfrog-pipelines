@@ -14,3 +14,10 @@ resources:
        imageName: chakilams3/for-jfrog-pipelines
        imageTag: latest
        autoPull: true
+
+  - name: sshkey
+    type: VmCluster
+    configuration:
+      sshKey: sshkey
+      targets:
+        - 15.206.19.95
