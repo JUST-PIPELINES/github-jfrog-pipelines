@@ -19,8 +19,8 @@ pipelines:
           affinityGroup: together
           inputSteps: 
             - name: docker_build
-          execution: 
-            onStart:
-              - docker login -u chakilams3 -p Santhu@439
-            onExecute: 
-               - docker image push chakilams3/for-jfrog-pipelines:latest
+        execution: 
+          onStart:
+            - docker login -u chakilams3 -p Santhu@439
+          onExecute: 
+             - docker image push chakilams3/for-jfrog-pipelines:latest
