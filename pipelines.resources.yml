@@ -6,11 +6,3 @@ resources:
       path: devopsguys3/github-jfrog-pipelines    # replace with your repository name
       branches:
         include: master
-
-  - name: newdockerhub
-    type: Image
-    configuration:
-       registry: dockerhub
-       imageName: chakilams3/for-jfrog-pipelines
-       imageTag: latest
-       autoPull: true
