@@ -7,7 +7,7 @@ resources:
       branches:
         include: master
 
-  - name: mynewdocker
+  - name: newdockerhub
     type: Image
     configuration:
        registry: dockerhub
