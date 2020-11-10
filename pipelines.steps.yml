@@ -13,13 +13,14 @@ pipelines:
             - name: github
           integrations:
             - name: newdockerhub    # replace with your artifactory integration
-
       - name: docker_push
-        type: DockerPush
-        configuration:
+        type: Bash
+        configuration: 
           affinityGroup: together
-          targetRepository: chakilams3/for-jfrog-pipelines
-          integrations:
-            - name: newdockerhub    # replace with your artifactory integration
-          inputSteps:
+          inputSteps: 
             - name: docker_build
+          execution: 
+            onStart:
+              - docker login -u chakilams3 -p Santhu@439
+            onExecute: 
+               - docker image push chakilams3/for-jfrog-pipelines:latest
