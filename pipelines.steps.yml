@@ -12,7 +12,7 @@ pipelines:
           inputResources:
             - name: github
           integrations:
-            - name: artifactorydockerrepo    # replace with your artifactory integration
+            - name: newdockerhub    # replace with your artifactory integration
 
       - name: docker_push
         type: DockerPush
@@ -20,6 +20,6 @@ pipelines:
           affinityGroup: together
           targetRepository: chakilams3/for-jfrog-pipelines
           integrations:
-            - name: mynewdocker    # replace with your artifactory integration
+            - name: newdockerhub    # replace with your artifactory integration
           inputSteps:
             - name: docker_build
