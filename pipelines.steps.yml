@@ -13,7 +13,7 @@ pipelines:
             - name: github
           integrations:
             - name: newdockerhub    # replace with your artifactory integration
-      - name: docker_deploy
+      - name: push
         type: Bash
         configuration: 
           affinityGroup: together
